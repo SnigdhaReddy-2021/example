@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Bites Bakery</title>
+  <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #fff8f0;
+      color: #333;
+    }
+
+    /* ---------- HEADER & NAV ---------- */
+    header {
+      background: #ff6f61;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ff6f61;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0.7rem 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffe5d9;
+    }
+
+    /* ---------- SLIDESHOW ---------- */
+    .slideshow {
+      margin-top: 100px; /* to avoid nav overlap */
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #ff6f61;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .slideshow {
+        height: 250px;
+      }
+      .slides img {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .products {
+        grid-template-columns: 1fr;
+      }
+      .slideshow {
+        height: 200px;
+      }
+      .slides img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Sweet Bites Bakery</h1>
+    <p>Freshly Baked Happiness Every Day</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- SLIDESHOW -->
+  <div class="slideshow" id="home">
+    <div class="slides">
+      <img src="CAKE.jpg" alt="Cake">
+      <img src="bread.jpg" alt="Bread">
+      <img src="Pastry.jpeg" alt="Pastry">
+    </div>
+  </div>
+
+  <!-- PRODUCTS SECTION -->
+  <section id="products">
+    <h2>Our Featured Products</h2>
+    <div class="products">
+      <div class="product">
+        <img src="cupcake.jpeg" alt="Cupcake">
+        <h3>Delicious Cupcakes</h3>
+      </div>
+      <div class="product">
+        <img src="Croissant.jpeg" alt="Croissant">
+        <h3>Buttery Croissants</h3>
+      </div>
+      <div class="product">
+        <img src="donut.jpg" alt="Donut">
+        <h3>Glazed Donuts</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Sweet Bites Bakery, we pride ourselves on using the finest ingredients to create delicious breads, pastries, and cakes. Every item is baked fresh daily, bringing warmth and joy to our community.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: sweetbites@example.com | Phone: (123) 456-7890</p>
+    <p>Visit us at: 123 Bakery Street, Dessert City</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Sweet Bites Bakery. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
